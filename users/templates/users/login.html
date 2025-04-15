@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load tailwind_filters %}
+{% block content %}
+<h1 class="text-3xl font-bold text-center text-gray-900 dark:text-white">Iniciar sesión</h1>
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <button
+        class="inline-block rounded-sm bg-indigo-600 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:ring-3 focus:outline-hidden"
+        href="#"
+        type="submit"
+    >
+        Iniciar sesión
+    </button>
+</form>
+<p style="margin: 8px;">No tienes una cuenta?, <a href="{% url 'register' %}" style="text-decoration: underline;">Registrate</a></p>
+{% endblock content %}
